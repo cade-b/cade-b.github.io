@@ -3,6 +3,18 @@
 <head>
 <meta name="description" content="Computing with orthogonal polynomials for integrable systems: A Riemann-Hilbert approach">
 <title>Computing with orthogonal polynomials for integrable systems: A Riemann-Hilbert approach</title>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true
+      }
+    });
+    </script>
+    <script type="text/javascript" async
+     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML">
+    </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel=StyleSheet href="cade_styles.css" type="text/css" media=all>
@@ -20,31 +32,92 @@
   </div>
   </div>
 
-	<center><table width=80% border=0 cellspacing="1" cellpadding="1">
-	<tr>
-	<td align="left" bgcolor="white" style="width:300px;">
-	  <img src="./cade.jpeg" style="width: 85%;"/>
-    </td>
-	<td align="left" bgcolor="white">
-		<p style="padding-left:30px;">
-
-    I'm a Ph.D. candidate in <a href="https://amath.washington.edu/">Applied Mathematics</a> at the University of Washington, advised by <a href="https://faculty.washington.edu/trogdon/">Tom Trogdon</a>. I primarily work on computational complex analysis with applications in numerical analysis and integrable systems.
-
-		</p>
-    </td>
-	</tr>
 
    </table></center>
 	<center><table width=80% border=0 cellspacing="1" cellpadding="1">
 
 	<tr>
 	<td align="left" bgcolor="white">
-		<p style="padding-left:30px;">
+	<h3>Computing with orthogonal polynomials for integrable systems: A Riemann-Hilbert approach</h3>
+	<p style="padding-left:30px;">
+    This is the companion page to the poster of the same name. 
+  </p>
+	<h4>Orthogonal polynomial recurrence coefficients</h4>
 
-
+	<h4>The Toda lattice</h4>
+	<h4>Finite genus KdV solutions</h4>
+	<p style="padding-left:30px;">
+    Genus $g$ solutions to the KdV equation can be obtained by solving the following RHP: 
+    <br>
+    Find \(\mathbf{S}_{x,t}:\mathbb{C}\setminus\left(\bigcup_{j=1}^g\left([-b_j,-a_j]\cup[a_j,b_j]\right)\right)\to\mathbb{C}^{1\times 2}\) such that
+    <br>
+    $$ 
+    \begin{aligned}
+		&\mathbf{S}_{x,t}~\text{is analytic in}~\mathbb{C}\setminus\left(\bigcup_{j=1}^g\left([-b_j,-a_j]\cup[a_j,b_j]\right)\right),\\
+		&\mathbf{S}_{x,t}^{+}(z)=\mathbf{S}_{x,t}^{-}(z) \left(\begin{array}{cc}
+			0 & -\mathrm{e}^{\mathrm{i}\Omega_j(x,t)} \\
+			\mathrm{e}^{-\mathrm{i}\Omega_j(x,t)} & 0
+		\end{array}\right), \quad z \in (a_j,b_j), \\
+		&\mathbf{S}_{x,t}^{+}(z)=\mathbf{S}_{x,t}^{-}(z)\left(\begin{array}{cc}
+			0 & -\mathrm{e}^{-\mathrm{i}\Omega_j(x,t)} \\
+			\mathrm{e}^{\mathrm{i}\Omega_j(x,t)} & 0
+		\end{array}\right), \quad z \in (-b_j,-a_j), \\
+		& \mathbf{S}_{x,t}(z)=\begin{pmatrix}
+			1 &1
+		\end{pmatrix}+\mathrm{O}\left(z^{-1}\right), \quad z \rightarrow \infty, \\
+		&\mathbf{S}_{x,t}(z)=\mathrm{O}\begin{pmatrix}
+			|z-a_j|^{-1/2} &|z-a_j|^{-1/2}
+		\end{pmatrix}, \quad z\to a_j,\\
+		&\mathbf{S}_{x,t}(z)=\mathrm{O}\begin{pmatrix}
+			1 &1
+		\end{pmatrix}, \quad z\to b_j,\\
+		&\mathbf{S}_{x,t}(z)=\mathrm{O}\begin{pmatrix}
+			|z+a_j|^{-1/2} &|z+a_j|^{-1/2}
+		\end{pmatrix}, \quad z\to-a_j,\\
+		&\mathbf{S}_{x,t}(z)=\mathrm{O}\begin{pmatrix}
+			1&1
+		\end{pmatrix}, \quad z\to-b_j.
+	\end{aligned}
+    $$
+  Here, \(x\) and \(t\) are parameters that correspond to the space and time variables in the KdV solution, meaning that the problem has constant jump conditions.
 		
-
-		</p>
+  </p>
+  <h4>Soliton gas KdV solutions</h4>
+  <p style="padding-left:30px;">
+    Soliton gas solutions to the KdV equation can be obtained by solving the following RHP: 
+    <br>
+    Find \(\mathbf{S}_{x,t}:\mathbb{C}\setminus\left(\bigcup_{j=1}^g\left([-b_j,-a_j]\cup[a_j,b_j]\right)\right)\to\mathbb{C}^{1\times 2}\) such that
+    <br>
+    $$ 
+    	\begin{aligned}
+		&\bY_{x,t}~\text{is analytic in}~\compl\setminus\left([-\eta_2,-\eta_1]\cup[\eta_1,\eta_2]\right),\\
+		& \bY_{x,t}^{+}(z)=\bY_{x,t}^{-}(z) \left(\begin{array}{cc}
+			1 & 0 \\
+			-\im r(z) \ex^{8z^3t-2 z x} & 1
+		\end{array}\right), \quad z \in (\eta_1,\eta_2), \\
+		&\bY_{x,t}^{+}(z)=\bY_{x,t}^{-}(z)\left(\begin{array}{cc}
+			1 & \im r(z) \ex^{2 z x-8z^3t} \\
+			0 & 1
+		\end{array}\right), \quad z \in (-\eta_2,-\eta_1), \\
+		& \bY_{x,t}(z)=\left(\begin{array}{ll}
+			1 & 1
+		\end{array}\right)+\OO\left(z^{-1}\right), \quad z \rightarrow \infty, \\
+		&\bY_{x,t}(z)=\OO\begin{pmatrix}
+			1+|z-\eta_1|^{\alpha/2} &1
+		\end{pmatrix}, \quad z\to\eta_1,\\
+		&\bY_{x,t}(z)=\OO\begin{pmatrix}
+			1+|z-\eta_2|^{\beta/2} &1
+		\end{pmatrix}, \quad z\to\eta_2,\\
+		&\bY_{x,t}(z)=\OO\begin{pmatrix}
+			1&1+|z+\eta_1|^{\alpha/2}
+		\end{pmatrix}, \quad z\to-\eta_1,\\
+		&\bY_{x,t}(z)=\OO\begin{pmatrix}
+			1&1+|z+\eta_2|^{\beta/2}
+		\end{pmatrix}, \quad z\to-\eta_2,
+	\end{aligned}
+    $$
+  where \(r(z)=h(z)\left(\sqrt{z-\eta_1}\right)^{\alpha}\left(\sqrt{\eta_2-z}\right)^{\beta}\), \(\alpha,\beta\in\{\pm1\}\) on \([\eta_1,\eta_2]\), and \(r(z)=r(-z)\).
+  </p>
     </td>
 	</tr>
 
