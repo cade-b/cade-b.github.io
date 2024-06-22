@@ -59,7 +59,7 @@
 	<p style="padding-left:30px;">
     We consider weight functions of the form 
 	$$
-		w(x)=\sum_{j=1}^{g+1}\mathbbm{1}_{[a_j,b_j]}(x)h_j(x)\left(\sqrt{x-a_j}\right)^{\alpha_j}\left(\sqrt{b_j-x}\right)^{\beta_j},\quad \alpha_j,\beta_j\in\{-1,1\},\quad \Sigma=\bigcup_{j=1}^{g+1}[a_j,b_j].
+		w(x)=\sum_{j=1}^{g+1}𝟙_{[a_j,b_j]}(x)h_j(x)\left(\sqrt{x-a_j}\right)^{\alpha_j}\left(\sqrt{b_j-x}\right)^{\beta_j},\quad \alpha_j,\beta_j\in\{-1,1\},\quad \Sigma=\bigcup_{j=1}^{g+1}[a_j,b_j].
 	$$
 	Here, each $h_j$ is positive on $[a_j,b_j]$ and sufficiently analytic. The FIK RHP for these weight functions is as follows:
 	<br>
@@ -125,8 +125,8 @@ corresponds to Chebyshev-$U$ polynomials on $[-1,1]$, so the Toda lattice is evo
 The time evolution of the first 11 tridiagonal elements of the solution $\mathbf{X}(t)$ is pictured below.
 </p>
 <div class="image-container">
-	<img src="/home/cade/Research/NumericRH/toda1inta.gif" alt="Image 1">
-	<img src="/home/cade/Research/NumericRH/toda1intb.gif" alt="Image 2">
+	<img src="toda1inta.gif" alt="Image 1">
+	<img src="toda1intb.gif" alt="Image 2">
 </div>
 <p style="padding-left:30px;">
 	A more exotic initial condition corresponds to a Chebyshev-\(T\)-like weight on \([-3,-2]\cup[2, 3]\) (\(g=1\), \(\alpha_j=-1\), \(\beta_j=-1\), \(j=1,2\)). 
