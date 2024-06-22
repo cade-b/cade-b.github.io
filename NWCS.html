@@ -32,19 +32,118 @@
   </div>
   </div>
 
+<style>
+	.image-container {
+		display: flex;
+	}
+	.image-container img {
+		width: 50%;
+	}
+</style>
+
 
    </table></center>
 	<center><table width=80% border=0 cellspacing="1" cellpadding="1">
 
 	<tr>
 	<td align="left" bgcolor="white">
-	<h3>Computing with orthogonal polynomials for integrable systems: A Riemann-Hilbert approach</h3>
+	<h3>Computing with orthogonal polynomials for integrable systems: A Riemann–Hilbert approach</h3>
 	<p style="padding-left:30px;">
-    This is the companion page to the poster of the same name. 
+    This is the companion page to the poster of the same name. For more information, see the following arXiv versions of our papers:
+	<br>
+	<a href="https://arxiv.org/abs/2302.12930">A Riemann–Hilbert approach to computing the inverse spectral map for measures supported on disjoint intervals</a>
+	<br>
+	<a href="https://arxiv.org/abs/2312.02384">The Akhiezer iteration</a>
   </p>
 	<h4>Orthogonal polynomial recurrence coefficients</h4>
-
+	<p style="padding-left:30px;">
+    We consider weight functions of the form 
+	$$
+		w(x)=\sum_{j=1}^{g+1}\mathbbm{1}_{[a_j,b_j]}(x)h_j(x)\left(\sqrt{x-a_j}\right)^{\alpha_j}\left(\sqrt{b_j-x}\right)^{\beta_j},\quad \alpha_j,\beta_j\in\{-1,1\},\quad \Sigma=\bigcup_{j=1}^{g+1}[a_j,b_j].
+	$$
+	Here, each $h_j$ is positive on $[a_j,b_j]$ and sufficiently analytic. The FIK RHP for these weight functions is as follows:
+	<br>
+	Find \(\mathbf{Y}_n:\mathbb{C}\setminus\Sigma\to\mathbb{C}^{2\times2}\) such that
+	$$
+	\begin{aligned}
+	&\mathbf{Y}_n~\text{is analytic in}~\mathbb{C}\setminus\Sigma,\\
+	&\mathbf{Y}_n^+(z)=\mathbf{Y}_n^-(z)\begin{pmatrix}
+		1 &w(z)\\0 &1
+	\end{pmatrix},\quad z\in\bigcup_{j=1}^{g+1}(a_j,b_j),\\
+	&\mathbf{Y}_n(z)=\left(\mathbf{I}+\mathrm{O}(z^{-1})\right)\begin{pmatrix}
+		z^n &0\\0&z^{-n}
+	\end{pmatrix},\quad z\to\infty,\\
+	&\mathbf{Y}_n(z)=\mathrm{O}\begin{pmatrix}
+		1 &1+|z-a_j|^{\alpha_j/2}\\
+		1 &1+|z-a_j|^{\alpha_j/2}
+	\end{pmatrix},\quad z\to a_j,\\
+	&\mathbf{Y}_n(z)=\mathrm{O}\begin{pmatrix}
+		1 &1+|z-b_j|^{\beta_j/2}\\
+		1 &1+|z-b_j|^{\beta_j/2}
+	\end{pmatrix},\quad z\to b_j.
+\end{aligned} 
+  $$
+  After applying a sequence of deformations, this RHP can be solved numerically, and the recurrence coefficients 
+and Cauchy integrals of the orthogonal polynomials corresponding to the weight function $w$ can be recovered. 
+The parameter $n$ corresponds to the degree of the polynomials, so \(N\) pairs of orthogonal polynomial recurrence coefficients can be computed in only  \(\mathrm{O}(N)\) arithmetic operations.
+	</p>
 	<h4>The Toda lattice</h4>
+<p style="padding-left:30px;">
+		The semi-infinite Toda lattice as considered by Deift, Li, and Tomei with boundary condition $b_{-1}(t)=0$ is defined by semi-infinite operators 
+$$
+\mathbf{X}(t)=\begin{pmatrix}
+	a_0(t) &b_0(t)\\
+	b_0(t) &a_1(t) &b_1(t)\\
+	&b_1(t) &a_2(t) &b_2(t)\\
+	&&\ddots &\ddots &\ddots
+\end{pmatrix},\quad \mathbf{B}(t)=\begin{pmatrix}
+0 &b_0(t)\\
+-b_0(t) &0 &b_1(t)\\
+&-b_1(t) &0 &b_2(t)\\
+&&\ddots &\ddots &\ddots
+\end{pmatrix},
+$$
+using the relation 
+$$
+\dot{\mathbf{X}}(t)=[\mathbf{B}(t),\mathbf{X}(t)],
+$$
+where $[\cdot,\cdot]$ denotes the standard matrix commutator. Given an initial condition $\mathbf{X}(0)=\mathbf{J}(w)$
+corresponding to the Jacobi operator (semi-infinite matrix of recurrence coefficients) for some orthogonal polynomial weight $w$, the time-dependent $a_j(t),b_j(t)$ are given by the respective recurrence coefficients 
+$\check a_j,\check b_j$ of the orthogonal polynomials with weight $\mathrm{e}^{tx}w(x)$. That is, if $\mathbf{X}(0)=\mathbf{J}(w)$, then $\mathbf{X}(t)=\mathbf{J}(w\mathrm{e}^{t\diamond})$, 
+where $\mathbf{J}(w)$ is the Jacobi operator for the orthogonal polynomials corresponding to the weight function $w$. 
+<br>
+The initial condition
+\begin{equation*}
+\mathbf{X}(0)=\begin{pmatrix}
+	0 &1/2\\
+	1/2 &0 &1/2\\
+	&1/2 &0 &1/2\\
+	&&\ddots &\ddots &\ddots
+\end{pmatrix},
+\end{equation*}
+corresponds to Chebyshev-$U$ polynomials on $[-1,1]$, so the Toda lattice is evolved by setting $g=0$, $\alpha_1=\beta_1=1$, and $h_1(x)=\mathrm{e}^{tx}$ in the weight function above. 
+The time evolution of the first 11 tridiagonal elements of the solution $\mathbf{X}(t)$ is pictured below.
+</p>
+<div class="image-container">
+	<img src="/home/cade/Research/NumericRH/toda1inta.gif" alt="Image 1">
+	<img src="/home/cade/Research/NumericRH/toda1intb.gif" alt="Image 2">
+</div>
+<p style="padding-left:30px;">
+	A more exotic initial condition corresponds to a Chebyshev-\(T\)-like weight on \([-3,-2]\cup[2, 3]\) (\(g=1\), \(\alpha_j=-1\), \(\beta_j=-1\), \(j=1,2\)). 
+	In this case, \(a_n(0)=0\) for all \(n\), and \(b_n(0)\) is nearly 2-periodic. The time evolution of the first 11 tridiagonal elements of the solution of the Toda lattice \(\mathbf{X}(t)\) with this initial condition is pictured below.
+	</p>
+	<div class="image-container">
+		<img src="/home/cade/Research/NumericRH/toda2inta.gif" alt="Image 1">
+		<img src="/home/cade/Research/NumericRH/toda2intb.gif" alt="Image 2">
+	</div>
+<p style="padding-left:30px;">
+A quasi-periodic initial condition corresponds to a Chebyshev-\(W\)-like weight on \([0.1, 1.1]\cup[2, 3]\cup[3.5, 4]\) (\(g=2\), \(\alpha_j=-1\), \(\beta_j=1\), \(j=1,2,3\)). 
+The time evolution of the first 11 tridiagonal elements of the solution of the Toda lattice \(\mathbf{X}(t)\) with this initial condition is pictured below.
+</p>
+<div class="image-container">
+	<img src="/home/cade/Research/NumericRH/toda3inta.gif" alt="Image 1">
+	<img src="/home/cade/Research/NumericRH/toda3intb.gif" alt="Image 2">
+</div>
 	<h4>Finite genus KdV solutions</h4>
 	<p style="padding-left:30px;">
     Genus $g$ solutions to the KdV equation can be obtained by solving the following RHP: 
@@ -80,44 +179,51 @@
 	\end{aligned}
     $$
   Here, \(x\) and \(t\) are parameters that correspond to the space and time variables in the KdV solution, meaning that the problem has constant jump conditions.
-		
   </p>
   <h4>Soliton gas KdV solutions</h4>
   <p style="padding-left:30px;">
     Soliton gas solutions to the KdV equation can be obtained by solving the following RHP: 
     <br>
-    Find \(\mathbf{S}_{x,t}:\mathbb{C}\setminus\left(\bigcup_{j=1}^g\left([-b_j,-a_j]\cup[a_j,b_j]\right)\right)\to\mathbb{C}^{1\times 2}\) such that
+    Find \(\mathbf{Y}_{x,t}:\mathbb{C}\setminus\left([-\eta_2,-\eta_1]\cup[\eta_1,\eta_2]\right)\to\mathbb{C}^{1\times 2}\) that satisfies
     <br>
     $$ 
     	\begin{aligned}
-		&\bY_{x,t}~\text{is analytic in}~\compl\setminus\left([-\eta_2,-\eta_1]\cup[\eta_1,\eta_2]\right),\\
-		& \bY_{x,t}^{+}(z)=\bY_{x,t}^{-}(z) \left(\begin{array}{cc}
+		&\mathbf{Y}_{x,t}~\text{is analytic in}~\mathbb{C}\setminus\left([-\eta_2,-\eta_1]\cup[\eta_1,\eta_2]\right),\\
+		& \mathbf{Y}_{x,t}^{+}(z)=\mathbf{Y}_{x,t}^{-}(z) \left(\begin{array}{cc}
 			1 & 0 \\
-			-\im r(z) \ex^{8z^3t-2 z x} & 1
+			-\mathrm{i} r(z) \mathrm{e}^{8z^3t-2 z x} & 1
 		\end{array}\right), \quad z \in (\eta_1,\eta_2), \\
-		&\bY_{x,t}^{+}(z)=\bY_{x,t}^{-}(z)\left(\begin{array}{cc}
-			1 & \im r(z) \ex^{2 z x-8z^3t} \\
+		&\mathbf{Y}_{x,t}^{+}(z)=\mathbf{Y}_{x,t}^{-}(z)\left(\begin{array}{cc}
+			1 & \mathrm{i} r(z) \mathrm{e}^{2 z x-8z^3t} \\
 			0 & 1
 		\end{array}\right), \quad z \in (-\eta_2,-\eta_1), \\
-		& \bY_{x,t}(z)=\left(\begin{array}{ll}
+		& \mathbf{Y}_{x,t}(z)=\left(\begin{array}{ll}
 			1 & 1
-		\end{array}\right)+\OO\left(z^{-1}\right), \quad z \rightarrow \infty, \\
-		&\bY_{x,t}(z)=\OO\begin{pmatrix}
+		\end{array}\right)+\mathrm{O}\left(z^{-1}\right), \quad z \rightarrow \infty, \\
+		&\mathbf{Y}_{x,t}(z)=\mathrm{O}\begin{pmatrix}
 			1+|z-\eta_1|^{\alpha/2} &1
 		\end{pmatrix}, \quad z\to\eta_1,\\
-		&\bY_{x,t}(z)=\OO\begin{pmatrix}
+		&\mathbf{Y}_{x,t}(z)=\mathrm{O}\begin{pmatrix}
 			1+|z-\eta_2|^{\beta/2} &1
 		\end{pmatrix}, \quad z\to\eta_2,\\
-		&\bY_{x,t}(z)=\OO\begin{pmatrix}
+		&\mathbf{Y}_{x,t}(z)=\mathrm{O}\begin{pmatrix}
 			1&1+|z+\eta_1|^{\alpha/2}
 		\end{pmatrix}, \quad z\to-\eta_1,\\
-		&\bY_{x,t}(z)=\OO\begin{pmatrix}
+		&\mathbf{Y}_{x,t}(z)=\mathrm{O}\begin{pmatrix}
 			1&1+|z+\eta_2|^{\beta/2}
 		\end{pmatrix}, \quad z\to-\eta_2,
 	\end{aligned}
     $$
-  where \(r(z)=h(z)\left(\sqrt{z-\eta_1}\right)^{\alpha}\left(\sqrt{\eta_2-z}\right)^{\beta}\), \(\alpha,\beta\in\{\pm1\}\) on \([\eta_1,\eta_2]\), and \(r(z)=r(-z)\).
-  </p>
+  where \(r(z)=h(z)\left(\sqrt{z-\eta_1}\right)^{\alpha}\left(\sqrt{\eta_2-z}\right)^{\beta}\), \(\alpha,\beta\in\{\pm1\}\) 
+  on \([\eta_1,\eta_2]\), and \(r(z)=r(-z)\). Here, \(h\) is positive on \([\eta_1,\eta_2]\) and suitably analytic. The evolution of a soliton gas solution computed using the above RHP is pictured below.
+  <br>
+<img src="/home/cade/Research/soliton-gas/sample_evolf.gif"/>
+<br>
+This RHP can be extended by adding jump conditions on additional intervals. This corresponds to KdV solutions with spectral data supported on several intervals on the imaginary axis. 
+The evolution of such a solution is pictured below.
+<br>
+<img src="/home/cade/Research/soliton-gas/exotic_evolf.gif"/>
+</p>
     </td>
 	</tr>
 
