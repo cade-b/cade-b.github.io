@@ -84,8 +84,8 @@
 \end{aligned} 
   $$
   After applying a sequence of deformations, this RHP can be solved numerically, and the recurrence coefficients 
-and Cauchy integrals of the orthogonal polynomials corresponding to the weight function $w$ can be recovered. 
-The parameter $n$ corresponds to the degree of the polynomials, so \(N\) pairs of orthogonal polynomial recurrence coefficients can be computed in only  \(\mathrm{O}(N)\) arithmetic operations.
+and Cauchy integrals of the orthogonal polynomials corresponding to the weight function \(w\) can be recovered. 
+The parameter \(n\) corresponds to the degree of the polynomials, so \(N\) pairs of orthogonal polynomial recurrence coefficients can be computed in only  \(\mathrm{O}(N)\) arithmetic operations.
 	</p>
 	<h4>The Toda lattice</h4>
 <p style="padding-left:30px;">
@@ -154,11 +154,11 @@ The time evolution of the first 11 tridiagonal elements of the solution of the T
     \begin{aligned}
 		&\mathbf{S}_{x,t}~\text{is analytic in}~\mathbb{C}\setminus\left(\bigcup_{j=1}^g\left([-b_j,-a_j]\cup[a_j,b_j]\right)\right),\\
 		&\mathbf{S}_{x,t}^{+}(z)=\mathbf{S}_{x,t}^{-}(z) \left(\begin{array}{cc}
-			0 & -\mathrm{e}^{\mathrm{i}\Omega_j(x,t)} \\
+			0 & \mathrm{e}^{\mathrm{i}\Omega_j(x,t)} \\
 			\mathrm{e}^{-\mathrm{i}\Omega_j(x,t)} & 0
 		\end{array}\right), \quad z \in (a_j,b_j), \\
 		&\mathbf{S}_{x,t}^{+}(z)=\mathbf{S}_{x,t}^{-}(z)\left(\begin{array}{cc}
-			0 & -\mathrm{e}^{-\mathrm{i}\Omega_j(x,t)} \\
+			0 & \mathrm{e}^{-\mathrm{i}\Omega_j(x,t)} \\
 			\mathrm{e}^{\mathrm{i}\Omega_j(x,t)} & 0
 		\end{array}\right), \quad z \in (-b_j,-a_j), \\
 		& \mathbf{S}_{x,t}(z)=\begin{pmatrix}
