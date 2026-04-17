@@ -2,8 +2,23 @@
 }
 
 html {
-	background-color: black;	
-	zoom: 75%;
+	background-color: black;
+}
+
+.skip-link {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	background: #000;
+	color: #fff;
+	padding: 8px 16px;
+	z-index: 100;
+	text-decoration: none;
+	font-family: sans-serif;
+}
+
+.skip-link:focus {
+	top: 0;
 }
 
 body {
@@ -154,6 +169,13 @@ border-radius: 3px;
 
 .paper:focus .bibtex {
     display: inherit;
+}
+
+a:focus-visible,
+[tabindex="0"]:focus-visible,
+button:focus-visible {
+    outline: 3px solid #005fcc;
+    outline-offset: 2px;
 }
 
 .footer {

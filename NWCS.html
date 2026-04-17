@@ -1,5 +1,4 @@
-<html style="background-color:#ffffff;">
-<head>
+<html lang="en" style="background-color:#ffffff;">
 <head>
 <meta name="description" content="Computing with orthogonal polynomials for integrable systems: A Riemann-Hilbert approach">
 <title>Computing with orthogonal polynomials for integrable systems: A Riemann-Hilbert approach</title>
@@ -21,16 +20,17 @@
 </head>
 <body style="margin-top: 0px; width: 50%;">
 
-   <div id="outer">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+   <nav id="outer" aria-label="Main navigation">
    <div id="menu" style="width:80%; ">
-    <!-- HINT: Set the class of any menu link below to "active" to make it appear active -->
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="pubs.html">Publications</a></li>
-      <li><a href="cv.pdf">CV</a></li>
+      <li><a href="cv.pdf" aria-label="CV (PDF document)">CV</a></li>
     </ul>
   </div>
-  </div>
+  </nav>
 
 <style>
 	.image-container {
@@ -42,12 +42,12 @@
 </style>
 
 
-   </table></center>
-	<center><table width=80% border=0 cellspacing="1" cellpadding="1">
+<main id="main-content">
+	<center><table width=80% border=0 cellspacing="1" cellpadding="1" role="presentation">
 
 	<tr>
 	<td align="left" bgcolor="white">
-	<h3>Computing with orthogonal polynomials for integrable systems: A Riemann–Hilbert approach</h3>
+	<h1>Computing with orthogonal polynomials for integrable systems: A Riemann–Hilbert approach</h1>
 	<p style="padding-left:30px;">
     This is the companion page to the poster of the same name. For more information, see the following arXiv versions of our papers:
 	<br>
@@ -55,7 +55,7 @@
 	<br>
 	<a href="https://arxiv.org/abs/2312.02384">The Akhiezer iteration</a>
   </p>
-	<h4>Orthogonal polynomial recurrence coefficients</h4>
+	<h2>Orthogonal polynomial recurrence coefficients</h2>
 	<p style="padding-left:30px;">
     We consider weight functions of the form 
 	$$
@@ -87,7 +87,7 @@
 and Cauchy integrals of the orthogonal polynomials corresponding to the weight function \(w\) can be recovered. 
 The parameter \(n\) corresponds to the degree of the polynomials, so \(N\) pairs of orthogonal polynomial recurrence coefficients can be computed in only  \(\mathrm{O}(N)\) arithmetic operations.
 	</p>
-	<h4>The Toda lattice</h4>
+	<h2>The Toda lattice</h2>
 <p style="padding-left:30px;">
 		The semi-infinite Toda lattice as considered by Deift, Li, and Tomei with boundary condition $b_{-1}(t)=0$ is defined by semi-infinite operators 
 $$
@@ -125,26 +125,26 @@ corresponds to Chebyshev-$U$ polynomials on $[-1,1]$, so the Toda lattice is evo
 The time evolution of the first 11 tridiagonal elements of the solution $\mathbf{X}(t)$ is pictured below.
 </p>
 <div class="image-container">
-	<img src="toda1inta.gif" alt="Image 1">
-	<img src="toda1intb.gif" alt="Image 2">
+	<img src="toda1inta.gif" alt="Animation of a_n(t) recurrence coefficients over time for Chebyshev-U initial condition on [-1,1]">
+	<img src="toda1intb.gif" alt="Animation of b_n(t) recurrence coefficients over time for Chebyshev-U initial condition on [-1,1]">
 </div>
 <p style="padding-left:30px;">
 	A more exotic initial condition corresponds to a Chebyshev-\(T\)-like weight on \([-3,-2]\cup[2, 3]\) (\(g=1\), \(\alpha_j=-1\), \(\beta_j=-1\), \(j=1,2\)). 
 	In this case, \(a_n(0)=0\) for all \(n\), and \(b_n(0)\) is nearly 2-periodic. The time evolution of the first 11 tridiagonal elements of the solution of the Toda lattice \(\mathbf{X}(t)\) with this initial condition is pictured below.
 	</p>
 	<div class="image-container">
-		<img src="toda2inta.gif" alt="Image 1">
-		<img src="toda2intb.gif" alt="Image 2">
+		<img src="toda2inta.gif" alt="Animation of a_n(t) recurrence coefficients over time for Chebyshev-T-like initial condition on [-3,-2] union [2,3]">
+		<img src="toda2intb.gif" alt="Animation of b_n(t) recurrence coefficients over time for Chebyshev-T-like initial condition on [-3,-2] union [2,3]">
 	</div>
 <p style="padding-left:30px;">
 A quasi-periodic initial condition corresponds to a Chebyshev-\(W\)-like weight on \([0.1, 1.1]\cup[2, 3]\cup[3.5, 4]\) (\(g=2\), \(\alpha_j=-1\), \(\beta_j=1\), \(j=1,2,3\)). 
 The time evolution of the first 11 tridiagonal elements of the solution of the Toda lattice \(\mathbf{X}(t)\) with this initial condition is pictured below.
 </p>
 <div class="image-container">
-	<img src="toda3inta.gif" alt="Image 1">
-	<img src="toda3intb.gif" alt="Image 2">
+	<img src="toda3inta.gif" alt="Animation of a_n(t) recurrence coefficients over time for Chebyshev-W-like quasi-periodic initial condition on [0.1,1.1] union [2,3] union [3.5,4]">
+	<img src="toda3intb.gif" alt="Animation of b_n(t) recurrence coefficients over time for Chebyshev-W-like quasi-periodic initial condition on [0.1,1.1] union [2,3] union [3.5,4]">
 </div>
-	<h4>Finite genus KdV solutions</h4>
+	<h2>Finite genus KdV solutions</h2>
 	<p style="padding-left:30px;">
     Genus $g$ solutions to the KdV equation can be obtained by solving the following RHP: 
     <br>
@@ -180,7 +180,7 @@ The time evolution of the first 11 tridiagonal elements of the solution of the T
     $$
   Here, \(x\) and \(t\) are parameters that correspond to the space and time variables in the KdV solution, meaning that the problem has constant jump conditions.
   </p>
-  <h4>Soliton gas KdV solutions</h4>
+  <h2>Soliton gas KdV solutions</h2>
   <p style="padding-left:30px;">
     Soliton gas solutions to the KdV equation can be obtained by solving the following RHP: 
     <br>
@@ -217,18 +217,18 @@ The time evolution of the first 11 tridiagonal elements of the solution of the T
   where \(r(z)=h(z)\left(\sqrt{z-\eta_1}\right)^{\alpha}\left(\sqrt{\eta_2-z}\right)^{\beta}\), \(\alpha,\beta\in\{\pm1\}\) 
   on \([\eta_1,\eta_2]\), and \(r(z)=r(-z)\). Here, \(h\) is positive on \([\eta_1,\eta_2]\) and suitably analytic. The evolution of a soliton gas solution computed using the above RHP is pictured below.
   <br>
-<img src="sample_evolf.gif"/>
+<img src="sample_evolf.gif" alt="Animation of a soliton gas KdV solution evolving over time"/>
 <br>
 This RHP can be extended by adding jump conditions on additional intervals. This corresponds to KdV solutions with spectral data supported on several intervals on the imaginary axis. 
 The evolution of such a solution is pictured below.
 <br>
-<img src="exotic_evolf.gif"/>
+<img src="exotic_evolf.gif" alt="Animation of an extended soliton gas KdV solution with spectral data on multiple intervals evolving over time"/>
 </p>
     </td>
 	</tr>
 
    </table></center>
-
+</main>
 
 </body>
 
