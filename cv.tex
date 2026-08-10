@@ -1,0 +1,177 @@
+% CV template
+%
+% Author: Christopher Keyes
+% Updated: September 24, 2021
+%
+% OK to use and edit!
+
+\documentclass{cv_style}
+\usepackage{enumitem}
+\usepackage{etaremune}
+\usepackage{amsmath}
+\usepackage[colorlinks = true, linkcolor = blue, urlcolor = blue, citecolor = blue, anchorcolor = blue]{hyperref}
+\usepackage{natbib, bibentry}
+\begin{document}
+\bibliographystyle{plain}
+\nobibliography{papers}
+	%\footnotetext[1]{Updated \today}
+    \pagenumbering{gobble}
+
+    \begin{center} \name{Cade Ballew} 
+
+\href{mailto:ballew@uw.edu}{ballew@uw.edu}
+
+{\href{https://cade-b.github.io/}{cade-b.github.io}}
+    
+	\end{center}
+	
+%	\section{Academic Interests}
+%	Briefly list your primary areas of academic interests here
+
+	\section{Education}
+		\subsection{University of Washington}
+				\begin{itemize}
+					\item Ph.D. in Applied Mathematics \hfill
+						2021--2026 (Expected)
+					\begin{itemize}
+					\item Advisor: Thomas Trogdon.
+					\end{itemize}
+					\item M.S. in Applied Mathematics\hfill 2021--2022
+				\end{itemize}
+				
+		\subsection{Rice University}
+				\begin{itemize}
+					\item B.A., \textit{magna cum laude}\hfill 2017--2021
+					\begin{itemize}
+						\item Majors: Computational and Applied Mathematics; Mathematical Economic Analysis.
+						\item Minor: Mathematics.
+					\end{itemize}
+				\end{itemize}
+		
+% \paper[Collaborator's name]{Title}{Status (e.g.\ in prep., submitted, accepted)}{(links)}
+
+	\section{Publications and Preprints}
+		\subsection{Publications}
+		\begin{etaremune}
+			\item \bibentry{SolitonGasAnnouncement}.
+			\item \bibentry{Akhiezer}.			
+			\item \bibentry{disjointOPs}.
+			%\cite{Cade}
+		\end{etaremune}
+		\subsection{Preprints}
+		\begin{etaremune}
+			\item \bibentry{AkhSylv}.		
+					%\cite{Cade}
+		\end{etaremune}
+		
+		\subsection{Software}
+		\begin{etaremune}	
+			\item \bibentry{KdVSolitonGas.jl}.		
+			\item \bibentry{ballew_trogdon_2023}.
+			%\cite{ballew_trogdon_2023}
+		\end{etaremune}
+		
+% \talk{title}{venue}{host}{date}
+		
+	\section{Invited Talks}
+		\begin{etaremune}
+			\item \talk{Numerical methods for problems on cut domains}{Mathematics Colloquium}{Baylor University}{February 2026}
+			\item \talk{Numerical methods for KdV soliton gasses}{AMS Fall Southeastern Sectional Meeting}{Tulane University}{October 2025}
+			\item \talk{The Akhiezer iteration for matrix
+				functions and Sylvester equations}{Joint SIAM/CAIMS Annual Meetings}{Montr\'eal, QC}{July 2025}
+			\item \talk{The Akhiezer iteration for matrix
+				functions and Sylvester equations}{30th Biennial Numerical Analysis Conference}{University of Strathclyde}{June 2025}
+			\item \talk{The Akhiezer iteration for matrix
+				functions and Sylvester equations}{Householder Symposium XXII}{Cornell University}{June 2025}
+			\item \talk{Computing KdV soliton gas potentials}{The Thirteenth  International Conference on Nonlinear Evolution Equations and Wave Phenomena:  Computation and Theory}{Athens, GA}{April 2025}
+			\item \talk{Polynomials: Better than you think}{Workshop on Challenges, Opportunities, and New Horizons in Rational Approximation}{Banff International Research Station}{April 2025}
+			\item \talk{Computing KdV soliton gas potentials}{AMS Spring Central Sectional Meeting}{University of Kansas}{March 2025}
+			\item \talk{The Akhiezer iteration for matrix
+				functions and Sylvester equations}{SIAM Conference on Computational Science and Engineering}{Fort Worth, TX}{March 2025}
+			\item \talk{Some numerical applications of
+				Riemann--Hilbert problems}{Joint Mathematics Meetings}{Seattle, WA}{January 2025}
+			\item \talk{Numerical solutions of
+				Riemann--Hilbert problems on disjoint intervals}{Integrable Systems and Random Matrix Theory Seminar}{University of Michigan}{October 2024}
+			\item \talk{Orthogonal polynomials and Geronimus’s theorem}{Arbeitsgemeinschaft on Quantum Signal Processing and Nonlinear Fourier Analysis}{Oberwolfach Research Institute for Mathematics}{October 2024}
+			\item \talk{Applications of numerical solutions of
+				Riemann--Hilbert problems on disjoint intervals}{SIAM Conference on Nonlinear Waves and Coherent Structures}{Baltimore, MD}{June 2024}
+			\item \talk{Numerical solutions of Riemann--Hilbert problems on disjoint intervals}{CMS Summer Meeting}{University of Saskatchewan}{June 2024}
+			\item \talk{Computing with orthogonal polynomials on disconnected domains}{SIAM PNW Biennial Meeting}{Western Washington University}{October 2023}
+		\end{etaremune}
+%		
+	\section{Posters}
+		\begin{etaremune}
+			\item \talk{Computing with orthogonal polynomials for integrable systems: A Riemann--Hilbert approach}{SIAM Conference on Nonlinear Waves and Coherent Structures}{Baltimore, MD}{June 2024}
+			\item \talk{Computing with orthogonal polynomials on disconnected domains: A Riemann--Hilbert approach}{Workshop on complex analysis: techniques, applications and computations}{Isaac Newton Institute}{July 2023}
+		\end{etaremune}
+		
+	\section{Conference organization}
+	\begin{etaremune}
+		\item Session co-organizer, SIAM Annual Meeting, Minisymposium on ``Orthogonal Polynomials and Special Functions in Mathematical Physics'', Cleveland, OH, July 2026.
+		\item Session co-organizer, 27th Conference of the International Linear Algebra Society, Minisymposium on ``Polynomials, Krylov Methods and Applications'', Blacksburg VA, May 2026.
+		\item Session co-organizer, Joint SIAM/CAIMS Annual Meetings, Minisymposium on ``Numerical methods in the theory of orthogonal polynomials and special functions'', Montr\'eal, QC, July 2025.
+		\item Session co-organizer, Joint Mathematics Meetings, AMS Special Session on ``Recent Advancements in Integrable Systems and Orthogonal Polynomials'', Seattle, WA, January 2025.
+		\item Session co-organizer, SIAM PNW Biennial Meeting, Session on ``Scientific Computing and Numerical Analysis'', Western Washington University, Bellingham, WA, October 2023.
+	\end{etaremune}
+		
+	\section{Teaching Experience}
+		\subsection{University of Washington}
+		\begin{itemize}
+			%\item Instructor, Course (semesters).
+			\item Instructor of Record, AMATH 353 (Partial Differential Equations and Waves), Summer 2024.
+			\item Teaching Assistant, AMATH 352 (Applied Linear Algebra and Numerical Analysis), Winter 2026.
+			\item Teaching Assistant, AMATH 401 (Vector Calculus and Complex Variables), Autumn 2025.
+			\item Teaching Assistant, AMATH 502 (Introduction to Dynamical Systems and Chaos), Winter 2025.
+			\item Teaching Assistant, AMATH 567 (Applied Complex Analysis), Autumn 2023, Autumn 2024.
+			\item Teaching Assistant, CFRM 507 (Optimization Methods in Finance), Autumn 2021, Autumn 2022.
+		%	\item Grader, Course (semesters).
+		\end{itemize}
+		\subsection{Rice University}
+		\begin{itemize}
+			\item Grader, CAAM 336 (Differential Equations in Science and Engineering), Spring 2019.
+		\end{itemize}
+		
+	\section{Service}
+	
+%	\subsection{Seminars}
+%	\begin{itemize}
+%		\item Co-organizer of \textit{Seminar title}, with Collaborator Name(s) (semesters). Seminar \href{https://seminarwebsite.com}{website}.
+%	\end{itemize}
+	
+	\begin{itemize}
+		\item SIAM UW Student Chapter
+		\begin{itemize}
+			\item Vice President\hfill 2022--2023
+			\item Outreach Coordinator\hfill 2023--2024
+		\end{itemize}
+		\item Numerical Analysis Research Club
+		\begin{itemize}
+			\item Student organizer\hfill Spring 2023, Autumn 2023
+		\end{itemize}
+	\end{itemize}
+		
+%	\section{Outreach}
+%		\begin{itemize}
+%			\item Instructor, Outreach program (dates).
+%		\end{itemize}
+		
+	\section{Awards}
+		\begin{itemize}
+			\item Kevorkian Fellowship\hfill 2025
+			\item Wan Fellowship\hfill2021--2024
+			\item AMS Sectional Travel Grant\hfill 2025
+			\item Boeing Research Award\hfill 2025
+			\item SIAM CSE Student Travel Award\hfill 2025
+			\item US Junior Oberwolfach Fellows NSF grant\hfill 2024
+			\item SIAM NWCS Student Travel Award\hfill 2024
+			\item CMS Student Travel Award\hfill 2024
+			\item SIAM PNW Student Travel Award\hfill 2023
+			\item Phi Beta Kappa\hfill2021
+			\item Peter Mieszkowski Prize for Honors Program Research\hfill2021
+			\item Malcolm Gillis Award in Mathematical Economic Analysis\hfill2021
+			\item Honors in Economics\hfill2021
+			\item Louis J. Walsh Scholarship\hfill2020--2021
+			\item Michael D. Maher RISE Award in Economics\hfill2020
+			\item Rice University President's Honor Roll (5 semesters)
+		\end{itemize}
+\end{document}
